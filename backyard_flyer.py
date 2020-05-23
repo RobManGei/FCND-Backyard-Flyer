@@ -220,7 +220,7 @@ class BackyardFlyer(Drone):
         #print(self.local_position)
         
         #always command next wp. Set heading to next waypoint for camrea view
-        self.cmd_position(self.waypointList[self.currentWP][0], self.waypointList[self.currentWP][1], self.waypointList[self.currentWP][2] * -1 , (((self.currentWP+1)/2) - self.currentWP) * math.pi )
+        self.cmd_position(self.waypointList[self.currentWP][0], self.waypointList[self.currentWP][1], self.waypointList[self.currentWP][2] * -1 , (((self.currentWP+1)/2) - self.currentWP) * math.pi  )
 
         #when within a radius depending on the leg lentgh of the target wp, set next waypoint as active. Smaller values cause the drone to overshoot the wp and fly back
         if np.linalg.norm(self.target_position[0:2] - self.local_position[0:2]) < self.selectedLegLength * 0.1:
